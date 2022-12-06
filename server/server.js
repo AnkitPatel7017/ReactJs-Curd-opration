@@ -5,7 +5,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const fileUpload = require('express-fileupload');
 
-const usersRoutes = require('./routes/userinformation-route')
+const studentRoutes = require('./routes/student-route')
 
 const PORT = process.env.PORT || 4005
 
@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(fileUpload());
 
-app.use('', usersRoutes)
 
+app.use('', studentRoutes)
 
 app.use(function (err, req, res, next) {
     console.error(err.stack)
